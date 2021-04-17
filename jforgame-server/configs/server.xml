@@ -3,6 +3,9 @@
 
 	<serverId>10001</serverId>
 	<serverPort>9527</serverPort>
+	<!-- 客户端封包最大字节数 -->
+	<maxReceiveBytes>4096</maxReceiveBytes>
+
 
 	<!-- http后台管理 -->
 	<adminPort>8080</adminPort>
@@ -11,7 +14,7 @@
 	<!--匹配服http地址 -->
 	<matchUrl>http://localhost:8899/</matchUrl>
 	<!--本服是否为战斗服 -->
-	<fight>true</fight>
+	<fight>false</fight>
 	<!--对外跨服端口 -->
 	<crossPort>9627</crossPort>
 

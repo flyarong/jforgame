@@ -4,12 +4,13 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.kingston</groupId>
+		<groupId>org.jforgame</groupId>
 		<artifactId>jforgame-parent</artifactId>
 		<version>1.0.0</version>
 	</parent>
 	<artifactId>jforgame-common</artifactId>
 	<name>jforgame-common</name>
+	<version>1.0.0</version>
 
 	<dependencies>
 		<dependency>
@@ -23,22 +24,6 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>apache-log4j-extras</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-		</dependency>
+
 	</dependencies>
 </project>

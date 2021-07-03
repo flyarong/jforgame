@@ -6,24 +6,13 @@
 	<parent>
 		<groupId>org.jforgame</groupId>
 		<artifactId>jforgame-parent</artifactId>
-		<version>1.0.0</version>
+		<version>${revision}</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
+
 	<artifactId>jforgame-common</artifactId>
-	<name>jforgame-common</name>
-	<version>1.0.0</version>
 
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- 日志系统 -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
 
 	</dependencies>
 </project>

@@ -1,27 +1,26 @@
-package jforgame.server.utils;
+package jforgame.server.game.cross.utils;
+
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.TypeFactory;
 
 import java.io.StringWriter;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.databind.JavaType;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.ArrayType;
-import com.fasterxml.jackson.databind.type.TypeFactory;
-import jforgame.server.logs.LoggerUtils;
 
 /**
- * json序列号工具（使用jackson）
- * 
- * @author kinson
+ * 跨服专用json工具
+ * 支持玩家数据过滤
  *
  */
-public final class JsonUtils {
-
+public class CrossJsonUtil {
+	
 	private static TypeFactory typeFactory = TypeFactory.defaultInstance();
 
-	private static final ObjectMapper MAPPER = new ObjectMapper();
+	private static final ObjectMapper MAPPER
+			= new ObjectMapper();
 
 	public static String object2String(Object object) {
 		StringWriter writer = new StringWriter();
@@ -39,7 +38,6 @@ public final class JsonUtils {
 		try {
 			return (T) MAPPER.readValue(json, type);
 		} catch(Exception e) {
-			LoggerUtils.error("", e);
 			return null;
 		}
 	}
@@ -67,16 +65,6 @@ public final class JsonUtils {
 		JavaType type = typeFactory.constructMapType(HashMap.class, keyClazz, valueClazz);
 		try {
 			return MAPPER.readValue(json, type);
-		} catch(Exception e) {
-			return null;
-		}
-	}
-
-	@SuppressWarnings("unchecked")
-	public static <T> T[] string2Array(String json, Class<T> clazz) {
-		ArrayType type = typeFactory.constructArrayType(clazz);
-		try {
-			return (T[]) MAPPER.readValue(json, type);
 		} catch(Exception e) {
 			return null;
 		}

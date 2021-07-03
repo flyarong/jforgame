@@ -6,19 +6,13 @@
     <parent>
         <groupId>org.jforgame</groupId>
         <artifactId>jforgame-parent</artifactId>
-        <version>1.0.0</version>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>jforgame-server</artifactId>
     <name>jforgame-server</name>
     <packaging>jar</packaging>
-
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
-        <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
         <!-- 该项目其他模块 -->
@@ -48,33 +42,13 @@
             <groupId>org.apache.mina</groupId>
             <artifactId>mina-core</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.mina/mina-http -->
         <dependency>
             <groupId>org.apache.mina</groupId>
             <artifactId>mina-http</artifactId>
         </dependency>
-
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-        </dependency>
-
-        <!-- 日志系统 -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>apache-log4j-extras</artifactId>
         </dependency>
 
         <dependency>
@@ -83,16 +57,9 @@
             <version>1.4.7</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-
         <!-- 读取配置文件 -->
         <dependency>
-            <groupId>dom4j</groupId>
+            <groupId>org.dom4j</groupId>
             <artifactId>dom4j</artifactId>
         </dependency>
         <!-- 数据库相关 -->
@@ -105,25 +72,10 @@
             <artifactId>c3p0</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.cloudhopper.proxool</groupId>
-            <artifactId>proxool-cglib</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.cloudhopper.proxool</groupId>
-            <artifactId>proxool</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>geronimo-spec</groupId>
-                    <artifactId>geronimo-spec-jms</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>avalon-framework</groupId>
-                    <artifactId>avalon-framework-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>c3p0</groupId>-->
+<!--            <artifactId>c3p0</artifactId>-->
+<!--        </dependency>-->
 
         <!-- 缓存 -->
         <dependency>
@@ -171,22 +123,14 @@
         </dependency>
 
         <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
-            <version>2.3</version>
         </dependency>
-
-        <!-- 其他 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -194,12 +138,6 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jforgame</groupId>
-            <artifactId>jforgame-orm</artifactId>
-            <version>1.0.0</version>
-            <scope>compile</scope>
         </dependency>
 
     </dependencies>
